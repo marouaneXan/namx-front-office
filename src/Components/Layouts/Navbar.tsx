@@ -3,6 +3,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import { l, Links } from "../../Constant/navLinks";
 
 import {
   FaFacebook,
@@ -28,15 +29,21 @@ const Navbar = () => {
         <img src={namx} alt="namX" />
       </Link>
       <ul className="hidden md:flex">
-        <Link to="/">
-          <li className="p-4">Home</li>
-        </Link>
-        <Link to="/">
-          <li className="p-4">Contact</li>
-        </Link>
-        <Link to="/">
-          <li className="p-4">Services</li>
-        </Link>
+        {Links.map((link: l) => (
+          <Link to={link.path}>
+            <li
+              className="p-4 text-[15px]"
+              style={{
+                fontWeight: "400",
+                lineHeight: "19px",
+                color: "rgb(212, 245, 143)",
+                fontFamily: "Kanit, sans-serif",
+              }}
+            >
+              {link.name}
+            </li>
+          </Link>
+        ))}
       </ul>
       {/* Hamburger */}
       <div onClick={handleNav} className="md:hidden z-10">
