@@ -1,0 +1,36 @@
+.button{
+    transform: skew(-25deg);
+    display: inline-block;
+    position: relative;
+    height: 40px;
+    padding: 0px 34px;
+    margin-top: 15px;
+    color: #FFF;
+    background: linear-gradient(90deg, #011D25 0%, #011D25 100%);
+    box-shadow: 0 -15px 10px -10px #011d25 inset;
+}
+.button span {
+    transform: skew(25deg);
+    display: inline-block;
+}
+.button:after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -5px;
+    height: 44px;
+    background-color: #C5F267;
+    box-shadow: 0 0px 5px 0px #c5f267;
+    width: 10px;
+    transition: left .2s ease-out;
+    animation-duration: .2s;
+    animation-name: button_animation_reverse;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+.button:hover {
+    color: #C5F267;
+    box-shadow: 0 -15px 10px -15px #c5f267 inset;
+}
