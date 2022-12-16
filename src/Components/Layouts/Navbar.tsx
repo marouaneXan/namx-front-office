@@ -24,9 +24,17 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex w-full justify-between items-center h-20 px-8 absolute z-10 text-white">
-      <Link to="/" className="w-[110px]">
-        <img src={namx} alt="namX" />
+    <div className="flex w-full justify-around items-center h-20 px-8 absolute z-10 text-white">
+      <Link to="/" className="w-[90px]">
+        <img
+          src={namx}
+          alt="namX"
+          style={{
+            fontWeight: "300",
+            lineHeight: "19px",
+            color: "rgb(0,0, 238)",
+          }}
+        />
       </Link>
       <ul className="hidden md:flex">
         {Links.map((link: l) => (
@@ -45,6 +53,35 @@ const Navbar = () => {
           </Link>
         ))}
       </ul>
+      <ul className="hidden md:flex">
+        <Link to="/">
+          <li
+            className="p-4 text-[15px]"
+            style={{
+              fontWeight: "400",
+              lineHeight: "19px",
+              color: "rgb(212, 245, 143)",
+              fontFamily: "Kanit, sans-serif",
+            }}
+          >
+            EN
+          </li>
+        </Link>
+        <Link to="/">
+          <li
+            className="p-4 text-[15px]"
+            style={{
+              fontWeight: "400",
+              lineHeight: "19px",
+              color: "rgb(212, 245, 143)",
+              fontFamily: "Kanit, sans-serif",
+            }}
+          >
+            FR
+          </li>
+        </Link>
+      </ul>
+
       {/* Hamburger */}
       <div onClick={handleNav} className="md:hidden z-10">
         {nav ? (
