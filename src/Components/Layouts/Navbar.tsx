@@ -44,7 +44,6 @@ const Navbar = () => {
               style={{
                 fontWeight: "400",
                 lineHeight: "19px",
-                color: "rgb(212, 245, 143)",
                 fontFamily: "Kanit, sans-serif",
               }}
             >
