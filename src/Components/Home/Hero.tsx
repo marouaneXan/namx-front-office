@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
+import namxVideo from "../../assets/NAMX HUV 2022.mp4";
 
 const Hero = () => {
   return (
     <div className="w-full h-screen relative">
       <video
         className="w-full h-full object-cover"
-        // src={busVid}
+        src={namxVideo}
         autoPlay
         loop
         muted
@@ -17,7 +18,7 @@ const Hero = () => {
         {/* <Search /> */}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;
