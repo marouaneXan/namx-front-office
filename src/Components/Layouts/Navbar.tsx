@@ -24,7 +24,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex w-full justify-around items-center h-20 px-8 absolute z-10 text-white">
+    <div className="flex w-full justify-between md:justify-around items-center h-20 px-8 absolute z-10 text-white">
       <Link to="/" className="w-[90px]">
         <img
           src={namx}
@@ -40,7 +40,7 @@ const Navbar = () => {
         {Links.map((link: l) => (
           <Link to={link.path}>
             <li
-              className="p-4 text-[15px]"
+              className={`p-4 text-[15px]  hover:text-[#50d71e] ${(location.pathname==link.path) && "text-[#50d71e]"} no-underline hover:underline decoration-2`}
               style={{
                 fontWeight: "400",
                 lineHeight: "19px",

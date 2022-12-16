@@ -2,22 +2,22 @@ export const Links=[
     {
         id:0,
         name:"Accueil",
-        path:""
+        path:"/"
     },
     {
         id:1,
         name:"Voiture à Hydrogène",
-        path:""
+        path:"/zdfz"
     },
     {
         id:2,
         name:"NAMX concept",
-        path:""
+        path:"/zdz"
     },
     {
         id:3,
         name:"Contact",
-        path:""
+        path:"/zd"
     },
 ]
 export interface l{
