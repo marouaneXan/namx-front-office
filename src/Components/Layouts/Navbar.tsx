@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import { Link } from "react-router-dom";
@@ -23,6 +23,26 @@ const Navbar = () => {
     setLogo(!logo);
   };
 
+  const [myurl, setMyurl] = useState<string>("");
+  useEffect(() => {
+    setInterval(() => {
+      if (typeof window !== "undefined") {
+        setMyurl(window.location.href);
+      }
+    }, 1000);
+  });
+
+  const translate = (lang: string) => {
+    if (typeof window !== "undefined") {
+      if (myurl.includes("?")) {
+        const url = myurl.substring(0, myurl.indexOf("="));
+        return url + "=" + lang;
+      } else {
+        return myurl + "?lng=" + lang;
+      }
+    }
+  };
+
   return (
     <div className="flex w-full justify-between md:justify-around items-center h-20 px-8 absolute z-10 text-white">
       <Link to="/" className="w-[90px]">
@@ -40,7 +60,10 @@ const Navbar = () => {
         {Links.map((link: l) => (
           <Link to={link.path}>
             <li
-              className={`p-4 text-[15px]  hover:text-[#50d71e] ${(location.pathname==link.path) && "text-[#50d71e] underline underline-offset-8"} decoration-2`}
+              className={`p-4 text-[15px]  hover:text-[#50d71e] ${
+                location.pathname == link.path &&
+                "text-[#50d71e] underline underline-offset-8"
+              } decoration-2`}
               style={{
                 fontWeight: "400",
                 lineHeight: "19px",
@@ -53,30 +76,27 @@ const Navbar = () => {
         ))}
       </ul>
       <ul className="hidden md:flex">
-        <Link to="/">
-          <li
-            className="p-4 text-[15px]"
-            style={{
-              fontWeight: "400",
-              lineHeight: "19px",
-              fontFamily: "Kanit, sans-serif",
-            }}
-          >
-            EN
-          </li>
-        </Link>
-        <Link to="/">
-          <li
-            className="p-4 text-[15px]"
-            style={{
-              fontWeight: "400",
-              lineHeight: "19px",
-              fontFamily: "Kanit, sans-serif",
-            }}
-          >
-            FR
-          </li>
-        </Link>
+        <li
+          className="p-4 text-[15px]"
+          style={{
+            fontWeight: "400",
+            lineHeight: "19px",
+            fontFamily: "Kanit, sans-serif",
+          }}
+        >
+          <a href={translate("en")}>EN</a>
+        </li>
+
+        <li
+          className="p-4 text-[15px]"
+          style={{
+            fontWeight: "400",
+            lineHeight: "19px",
+            fontFamily: "Kanit, sans-serif",
+          }}
+        >
+          <a href={translate("fr")}>FR</a>
+        </li>
       </ul>
 
       {/* Hamburger */}
