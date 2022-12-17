@@ -4,8 +4,10 @@ import namx1 from "../../assets/namx1.webp";
 import namx2 from "../../assets/namx2.webp";
 import namx3 from "../../assets/namx3.webp";
 import namx5 from "../../assets/namx5.jpg";
+import { useTranslation } from "react-i18next";
 
 const NamxSection = () => {
+  const { t } = useTranslation();
   return (
     <div className="flex flex-col space-y-6 items-center mx-auto py-16 px-4">
       <h1
@@ -17,7 +19,7 @@ const NamxSection = () => {
           color: "rgb(1, 29, 37)",
         }}
       >
-        NOUVELLE EXPLORATION DE{" "}
+        {t("NEW AUTOMOTIVE")}{" "}
         <span
           className="text-[35px]"
           style={{
@@ -27,7 +29,7 @@ const NamxSection = () => {
             color: "rgb(1, 29, 37)",
           }}
         >
-          LA MOBILITÉ AUTOMOBILE
+          {t("MOBILITY EXPLORATION")}
         </span>
       </h1>
       <p
@@ -39,9 +41,7 @@ const NamxSection = () => {
           color: "rgb(1, 29, 37)",
         }}
       >
-        Nous concilions mobilité humaine infinie et préservation de
-        l'environnement à grande échelle grâce à l'hydrogène vert. Egalement, le
-        zéro émission.
+        {t("Namx_section")}
       </p>
       <div className="grid grid-rows-none md:grid-cols-5 py-4 gap-2 md:gap-4">
         <img
