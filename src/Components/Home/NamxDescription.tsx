@@ -3,8 +3,10 @@ import power from "../../assets/icon-power.svg";
 import meter from "../../assets/icon-meter.svg";
 import co2 from "../../assets/icon-co2.svg";
 import namx4 from "../../assets/namx4.webp";
+import { useTranslation } from "react-i18next";
 
 const NamxDescription = () => {
+  const { t } = useTranslation();
   return (
     <div className="max-w-[1240px] mx-auto grid lg:grid-cols-3 gap-4 px-4 py-16">
       <div className="lg:col-span-2 flex flex-col justify-evenly">
@@ -18,7 +20,7 @@ const NamxDescription = () => {
               color: "rgb(1, 29, 37)",
             }}
           >
-            UNE GRANDE AUTONOMIE AVEC DE{" "}
+            {t("GREAT AUTONOMY WITH")}{" "}
             <span
               className="text-[35px]"
               style={{
@@ -28,7 +30,7 @@ const NamxDescription = () => {
                 color: "rgb(1, 29, 37)",
               }}
             >
-              L'ÉNERGIE VERTE
+              {t("GREEN POWER")}
             </span>
           </h2>
           <p
@@ -40,10 +42,7 @@ const NamxDescription = () => {
               color: "rgb(1, 29, 37)",
             }}
           >
-            La voiture NamX bénéficie d'un double réservoir d'hydrogène. En plus
-            du réservoir fixe, un réservoir amovible composé de 6 capsules
-            d'hydrogène permet à nos consommateurs de s'approvisionner
-            facilement en hydrogène.
+            {t("Namx_desc")}
           </p>
         </div>
         <div className="grid sm:grid-cols-3 gap-6 py-4">
@@ -70,7 +69,7 @@ const NamxDescription = () => {
                   color: "rgb(1, 29, 37)",
                 }}
               >
-                KM d'autonomie
+                KM {t("range")}
               </p>
             </div>
           </div>
@@ -97,7 +96,7 @@ const NamxDescription = () => {
                   color: "rgb(1, 29, 37)",
                 }}
               >
-                chevaux
+                {t("Horsepower")}
               </p>
             </div>
           </div>
@@ -124,7 +123,7 @@ const NamxDescription = () => {
                   color: "rgb(1, 29, 37)",
                 }}
               >
-                chevaux
+                {t("CO2 emissions")}
               </p>
             </div>
           </div>
