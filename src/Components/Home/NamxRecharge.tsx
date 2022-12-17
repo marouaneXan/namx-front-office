@@ -1,7 +1,11 @@
 import React from "react";
 import namxRecharge from "../../assets/namx-recharge.webp";
+import { useTranslation } from "react-i18next";
+import { useLocation } from "react-router-dom";
 
 const NamxRecharge = () => {
+  const location = useLocation();
+  const { t } = useTranslation();
   return (
     <div className="flex flex-col space-y-6 items-center mx-auto py-16 px-4">
       <img
@@ -21,7 +25,9 @@ const NamxRecharge = () => {
           color: "rgb(1, 29, 37)",
         }}
       >
-        CAPSULE{" "}
+        {location.search === "?lng=fr"
+          ? t("CAPSULES")
+          : t("HYDROGEN")}{" "}
         <span
           className="text-[35px]"
           style={{
@@ -31,7 +37,9 @@ const NamxRecharge = () => {
             color: "rgb(1, 29, 37)",
           }}
         >
-          HYDROGÈNE
+          {location.search === "?lng=fr"
+            ? t("HYDROGEN")
+            : t("CAPSULES")}
         </span>
       </h1>
       <p
@@ -43,11 +51,7 @@ const NamxRecharge = () => {
           color: "rgb(1, 29, 37)",
         }}
       >
-        Afin de réduire les contraintes liées aux déplacements décarbonés comme
-        le temps de recharge, l'immobilisation et la proximité des stations,
-        nous proposons une formule spéciale au-delà du NamX. Un système de
-        livraison à domicile par abonnement devrait voir le jour et les capsules
-        pourraient être utilisées à de multiples occasions.
+        {t("NAMXCHARGE")}
       </p>
     </div>
   );
