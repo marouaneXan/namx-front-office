@@ -1,7 +1,9 @@
 import React from "react";
 import namxVideo from "../../assets/NAMX HUV 2022.mp4";
+import { useTranslation } from "react-i18next";
 
 const Hero = () => {
+  const { t } = useTranslation();
   return (
     <div className="w-full h-screen relative">
       <video
@@ -22,7 +24,7 @@ const Hero = () => {
             fontFamily: "Kanit, sans-serif",
           }}
         >
-          NamX, l’unique
+          {t("The 1st premium")}
         </h1>
         <h2
           className="py-4 text-[50px]"
@@ -33,7 +35,7 @@ const Hero = () => {
             fontFamily: "Kanit, sans-serif",
           }}
         >
-          SUV À HYDROGÈNE
+          {t("HUV")}
         </h2>
         {/* <Search /> */}
       </div>
