@@ -38,7 +38,7 @@ const ResevationSection = () => {
         de la conception du moteur d'origine ou GTH et d'autres composants. La
         commercialisation des véhicules est prévue pour 2025.
       </p>
-      <Button/>
+      <Button content="Réservez maintenant" />
     </div>
   );
 };

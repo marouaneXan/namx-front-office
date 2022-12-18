@@ -1,10 +1,14 @@
 import React from "react";
 import "./style.css"
 
-const Button = () => {
+interface ButtonProps{
+  content:string
+}
+
+const Button = (props:ButtonProps) => {
   return (
     <button className="button">
-      <span>Réservez maintenant</span>
+      <span>{props.content}</span>
     </button>
   );
 };
