@@ -1,6 +1,8 @@
 import Button from "../Button";
+import { useTranslation } from "react-i18next";
 
 const ResevationSection = () => {
+  const { t } = useTranslation();
   return (
     <div className="flex flex-col space-y-6 items-center mx-auto py-16 px-4">
       <h1
@@ -12,7 +14,7 @@ const ResevationSection = () => {
           color: "rgb(1, 29, 37)",
         }}
       >
-        RÉSERVEZ VOTRE{" "}
+        {t("PRE-ORDER YOUR")}{" "}
         <span
           className="text-[35px]"
           style={{
@@ -22,7 +24,7 @@ const ResevationSection = () => {
             color: "rgb(1, 29, 37)",
           }}
         >
-          VOITURE NAMX
+          {t("NAMX VEHICLE")}
         </span>
       </h1>
       <p
@@ -34,11 +36,9 @@ const ResevationSection = () => {
           color: "rgb(1, 29, 37)",
         }}
       >
-        Passez par l'étape de configuration en choisissant la personnalisation
-        de la conception du moteur d'origine ou GTH et d'autres composants. La
-        commercialisation des véhicules est prévue pour 2025.
+        {t("Reservation desc")}
       </p>
-      <Button content="Réservez maintenant" />
+      <Button content={t("Pre-order now")} />
     </div>
   );
 };
