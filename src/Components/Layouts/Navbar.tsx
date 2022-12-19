@@ -60,9 +60,9 @@ const Navbar = () => {
         {Links.map((link: l) => (
           <Link to={link.path}>
             <li
-              className={`p-4 text-[15px]  hover:text-[#50d71e] ${
+              className={`p-4 text-[15px]  hover:text-[#C5F267] ${
                 location.pathname == link.path &&
-                "text-[#50d71e] underline underline-offset-8"
+                "text-[#C5F267] underline underline-offset-8"
               } decoration-2`}
               style={{
                 fontWeight: "400",
@@ -77,7 +77,7 @@ const Navbar = () => {
       </ul>
       <ul className="hidden md:flex">
         <li
-          className="p-4 text-[15px]"
+          className="p-2 text-[15px]"
           style={{
             fontWeight: "400",
             lineHeight: "19px",
@@ -88,7 +88,7 @@ const Navbar = () => {
         </li>
 
         <li
-          className="p-4 text-[15px]"
+          className="p-2 text-[15px]"
           style={{
             fontWeight: "400",
             lineHeight: "19px",
