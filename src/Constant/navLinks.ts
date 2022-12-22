@@ -7,7 +7,7 @@ export const Links=[
     {
         id:1,
         name:"Voiture à Hydrogène",
-        path:"/zdfz"
+        path:"/cars"
     },
     {
         id:2,
